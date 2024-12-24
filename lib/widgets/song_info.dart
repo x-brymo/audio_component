@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 
 class SongInfo extends StatelessWidget {
-  const SongInfo({super.key});
-
+   SongInfo({super.key, required this.title1, required this.title2});
+final String title1 ;
+final String title2 ;
+bool isShow = true;
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       children: [
-        Text(
-          'Beethoven - Für Elise',
-          style: TextStyle(
-              color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+        Text( isShow == false ?
+          'Beethoven - Für Elise': title1,
+         
           textAlign: TextAlign.center,
         ),
         Text(
-          'Ludwig van Beethoven',
-          style: TextStyle(color: Colors.white54, fontSize: 18),
-          textAlign: TextAlign.center,
+          isShow == false ?
+          'Ludwig van Beethoven':title2,
+          
         ),
       ],
     );
